@@ -1,0 +1,93 @@
+\chapter{Библиография}\label{ch:bib}
+
+
+
+В данном шаблоне используется подход к генерированию библиографии с помощью bibtex. Эта система позволяет генерировать список литературы в заданном стиле используя базу данных статей в определённом формате.
+
+\begin{itemize}
+	\item \href{https://ru.wikipedia.org/wiki/BibTeX}{https://ru.wikipedia.org/wiki/BibTeX}
+	\item  \href{https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex}{\small https://www.overleaf.com/learn/latex/Bibliography\_management\_with\_bibtex}
+	\item \href{http://mydebianblog.blogspot.com/2006/11/latex-jabref.html}{http://mydebianblog.blogspot.com/2006/11/latex-jabref.html}
+	\item 	\href{http://www.bibtex.org/Using/}{http://www.bibtex.org/Using/}
+	\item \href{https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management}{https://en.wikibooks.org/wiki/LaTeX/Bibliography\_Management}
+\end{itemize}
+
+\section{Использование bibtex}
+
+\begin{enumerate}
+	\item Либо в преамбуле документа, либо непосредственно перед вызовом команды построения библиографии указать её стиль:  
+	
+	\verb|\bibliographystyle{Style}|
+	
+	Здесь \verb|Style| -- стиль. Есть предустановленные:
+	
+	\href{https://www.overleaf.com/learn/latex/bibtex_bibliography_styles}{https://www.overleaf.com/learn/latex/bibtex\_bibliography\_styles}
+	
+	Но можно использовать сторонние, указав путь к соответствующему \verb|.bst| файлу.
+	\item В тексте ссылка на литературу указывается с помощью команды: 
+	
+	\verb|\cite{PubName}| (и её вариаций), получается: \cite{Annenkov2020,Annenkov2019,Annenkov2019d}
+	\verb|PubName| -- идентификатор статьи, хранящейся в базе данных статей (простой текстовый файл \verb|.bib|)
+	
+	\item В том месте где мы хотим сгенерировать библиографию вызываем команду:
+	
+	\verb|\bibliography{RefSource}|
+	
+	Здесь \verb|RefSource| -- адрес  \verb|.bib| файла с базой литературы. Записи в нём хранятся в виде:
+	
+\begin{small}
+	\begin{minted}{bibtex}
+@article{Annenkov2020,
+author = {Annenkov, V. V. and Volchok, E. P. and 
+Timofeev, I. V.},
+doi = {10.3847/1538-4357/abbef2},
+issn = {15384357},
+journal = {The Astrophysical Journal},
+month = {nov},
+number = {2},
+pages = {88},
+title = {{Electromagnetic Emission Produced by 
+Three-wave Interactions in a Plasma with 
+Continuously Injected Counterstreaming Electron Beams}},
+url = {https://iopscience.iop.org/article/10.3847/
+1538-4357/abbef2},
+volume = {904},
+year = {2020}
+}
+	\end{minted}
+\end{small}
+
+Здесь \verb|Annenkov2020|~--- идентификатор публикации. Как правило, с сайтов журналов можно брать информацию о статьях сразу в таком формате.
+
+\item  Последовательно применить к документу команды:
+
+\begin{minted}{sh}
+latex doc.tex
+latex doc.tex
+bibtex doc.tex
+latex doc.tex
+\end{minted}
+
+Здесь вместо \mintinline{sh}{latex} может быть любая другая команда обработки \mintinline{sh}{.tex} файла (\mintinline{sh}{pdflatex, xelatex ....}). 
+
+Зачастую IDE сами по нажатию одной кнопки проделывают всё это.
+\end{enumerate}
+
+\section{Поддержка базы данных статей}
+
+Базу данных публикаций в формате bibtex'а можно наполнять и поддерживать с помощью разных инструментов:
+
+\begin{enumerate}
+	\item JabRef \href{https://www.jabref.org/}{https://www.jabref.org/} 
+	\item Zotero \href{https://www.zotero.org/}{https://www.zotero.org/}
+	\item Mendeley \href{https://www.mendeley.com/}{https://www.mendeley.com/}
+\end{enumerate}
+
+Эти системы позволяют в удобной форме хранить и обрабатывать информацию о публикациях. Импортировать её с сайтов, pdf файлов статей и т.п.
+
+Последние две системы также хранят всю базу в облаке.
+
+
+
+
+

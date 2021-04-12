@@ -1,0 +1,113 @@
+\chapter{Таблицы}\label{ch:tab}
+\begin{itemize}
+	\item 	\href{http://mydebianblog.blogspot.com/2009/01/tables-in-latex.html}{http://mydebianblog.blogspot.com/2009/01/tables-in-latex.html}
+	
+	\item 	\href{http://mydebianblog.blogspot.com/2013/01/advanced-tables-in-latex.html}{http://mydebianblog.blogspot.com/2013/01/advanced-tables-in-latex.html} 
+\end{itemize}
+
+Для некоторых приведённых примеров требуются пакеты:
+
+окружение таблиц tabularx:\verb|\usepackage{tabularx}|
+
+объединение строк в таблицах:
+\verb|\usepackage{multirow}|
+
+для всяких украшательств в таблицах:
+\verb|\usepackage{booktabs}|
+
+работа с ``плавающими'' объектами:
+\verb|\usepackage{float}|
+
+
+По ГОСТу оформлены таблицы \ref{tab:GOST1} и \ref{tab:GOST2}.
+
+
+\begin{table}[ht]
+	%\renewcommand{\arraystretch}{1.8} %% increase table row spacing
+	%\renewcommand{\tabcolsep}{1cm}   %% increase table column spacing
+	\caption{Простая таблица}
+	\begin{tabular}{|c|c|r|l|}
+		\hline
+		раз & два & три & четыре \\
+		\hline
+		1 & 2 & 3 & 4 \\
+		\hline
+		пять & шесть & семь & восемь \\
+		\hline
+		9 & 10 & 11 & 12 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+		\caption{Такая таблица по ГОСТу}
+		\label{tab:GOST1}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\multirow{3}{*}{Размеры нестандартных болтов} & \multicolumn{2}{c|}{Диаметр} \\
+			\cline{2-3}
+			& Норма & Разброс \\
+			\cline{2-3}
+			& 10 мм & 1 мм \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+		\caption{Такая таблица по ГОСТу}
+		\label{tab:GOST2}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			& \multicolumn{2}{c|}{Диаметр} \\
+			\cline{2-3}
+			\raisebox{1.5ex}[0cm][0cm]{Нестандартные болты}
+			& Норма & Разброс \\
+			\hline
+			Размеры & 10 мм & 1 мм \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Таблица по ширине страницы}
+	\begin{tabularx}{\textwidth}{XXXXX}
+		\toprule
+		auto & break & case & char & const\\
+		%	\hline
+		continue   & default   & do & double & else\\
+		%	\hline
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+	\caption{Изменённое соотношение ширин столбцов}
+	\begin{tabularx}{.85\textwidth}{>{\hsize=0.075\textwidth}XX>{\hsize=0.075\textwidth}XX}
+		\toprule
+		== & Равно & != & Не равно\\
+		> & Больше & < & Меньше\\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+
+\begin{table}[!hbt]
+		\caption{Таблица с фиксированной шириной колонок и увеличенным размером строк.}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2} %% increase table row spacing	
+		\begin{tabular}{|>{\raggedright\arraybackslash}m{3.2cm}|>{\arraybackslash}p{1.9cm}|>{\raggedright\arraybackslash}m{5cm}|>{\raggedright\arraybackslash}m{5cm}|}
+			\hline
+			\textbf{Величина} & \textbf{Обоз-е} & \textbf{Значение в СИ} & \textbf{Значение в СГС} \\
+			\hline
+			\textbf{Масса электрона} & $m_e$ &$9.1094\cdot10^{-31}$, кг  & $9.1094\cdot10^{-28}$, г  \\
+			\hline
+			
+		\end{tabular}
+	\end{center}
+\end{table}	

@@ -1,0 +1,32 @@
+\chapter{Листинги кода}\label{ch:code}
+
+Для включения в текст листингов кода удобно использовать пакет
+
+\verb|\usepackage{minted}|
+
+Для использования нужно будет верстать с ключём \mintinline{sh}{-shell-escape}:
+\begin{minted}{c++}
+latex -shell-escape doc.tex
+\end{minted}
+
+Вместо \mintinline{sh}{latex} может быть \mintinline{sh}{pdflatex} или \mintinline{sh}{xelatex}.
+
+Код, включённый в текст: 
+
+\verb|\mintinline{c++}{float var;}|:
+
+ \mintinline{c}{float var;} 
+
+Или так
+
+\begin{minted}{c++}
+vector<Param> All_Parameters;
+struct Param
+{
+   short int Var0;
+   float_t Var1;//float_t переменная 
+   bool Tr;
+   vector<string> Param_Values;//значения параметра
+};
+\end{minted}
+

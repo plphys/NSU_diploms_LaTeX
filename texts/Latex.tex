@@ -1,0 +1,116 @@
+\chapter{\LaTeX}\label{ch:latex}
+
+\section{Установка}
+
+
+\begin{itemize}
+	\setlength{\itemsep}{1pt}%регулировка расстояния между элементами
+	\setlength{\parskip}{1pt}%
+	\item Windows: TeX Live \href{https://www.tug.org/texlive/acquire-netinstall.html}{https://www.tug.org/texlive/acquire-netinstall.html}
+	\item Linux: пакет texlive-full\footnote{Это пример сноски, генерируемой командой \mintinline{tex}{\footnote{...}}| }
+	\item Пример IDE: \href{https://www.texstudio.org/}{https://www.texstudio.org/}
+	\item Бесплатная онлайн система вёрстки: \href{https://www.overleaf.com/}{https://www.overleaf.com/}
+\end{itemize}
+
+\section{Учебные материалы}
+
+\begin{itemize}
+	\item Большой проект на русском с самых основ (слегка устарел в плане рекомендуемого ПО, но информация по \LaTeX'у актуальна):
+	
+	 \href{http://mydebianblog.blogspot.com/2008/11/latex.html}{http://mydebianblog.blogspot.com/2008/11/latex.html}
+	 \item Много гайдов: \href{https://www.overleaf.com/learn}{https://www.overleaf.com/learn}
+	\item \href{http://www.inp.nsk.su/~baldin/LaTeX/}{http://www.inp.nsk.su/\textasciitilde baldin/LaTeX/}
+	\item Литература:
+	\begin{itemize}
+		\item Котельников И.А., Чеботаев П.З., \textit{LaTeX по-русски }
+		
+		\href{https://www.researchgate.net/publication/235255954_LaTeX_po-russki}{\small https://www.researchgate.net/publication/235255954\_LaTeX\_po-russki}
+		
+		\item Львовский С. М., \textit{Набор и вёрстка в системе \LaTeX}
+		
+		 \href{https://www.mccme.ru/free-books/llang/newllang.pdf}{\small https://www.mccme.ru/free-books/llang/newllang.pdf}
+	\end{itemize}
+\end{itemize}
+
+\section{Презентации и постеры}
+
+С помощью \LaTeX также можно оформлять презентации и постеры. Особенно удобно это для тех, у кого в работе много формул. Удобнее всего это делать с помощью пакета \verb*|beamer|. Набор материалов по нему:
+\begin{itemize}
+	\item Официальная документация:
+	
+	 \href{http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{\small http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf} 
+	 \item На overleaf:
+	 
+	 Туториал для новичков: \href{https://www.overleaf.com/learn/latex/Beamer_Presentations:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Getting_Started}{ссылка} 
+	 	
+	 \href{https://www.overleaf.com/learn/latex/beamer}{https://www.overleaf.com/learn/latex/beamer}
+	 \item На русском языке:
+	  
+	  \href{https://proft.me/2014/05/31/beamer-kachestvennaya-prezentaciya-sredstvami-late/}{\small https://proft.me/2014/05/31/beamer-kachestvennaya-prezentaciya-sredstvami-late/}
+	  
+	  \href{https://habr.com/ru/post/145523/}{https://habr.com/ru/post/145523/}
+	  \item Про постеры:
+	  
+	  \href{http://mydebianblog.blogspot.com/2010/12/beamerposter.html}{http://mydebianblog.blogspot.com/2010/12/beamerposter.html}
+	  
+	  \href{https://www.overleaf.com/gallery/tagged/poster}{https://www.overleaf.com/gallery/tagged/poster}
+	  
+	  Но для постеров возможно удобнее сразу использовать пакет Tikz:
+	  
+	  \href{https://ru.overleaf.com/learn/latex/Posters}{https://ru.overleaf.com/learn/latex/Posters}
+\end{itemize}
+
+
+\section{Начертания шрифтов}
+\noindent%выключить красную строку
+\textnormal{(Default) Основной шрифт документа}\\
+\textrm{(Roman) С засечками}\\
+\textit{(Italic) Курсив — не наклонный!}\\
+\textsl{(Slanted) Наклонный — не курсив!}\\
+\textbf{(Bold) Жирный}\\
+\textbf{\textit{(Bold italic) Жирный курсив}}\\
+\textbf{\textsl{(Bold slanted) Жирный наклонный}}\\
+\texttt{(Monospace) Моноширинный}\\
+\textsc{(Small caps) «Малые заглавные»}\\
+\textbf{\textsc{(Bold Small caps) Жирный «Малые заглавные»}}\\
+\textsf{(Sans serif) без засечек}
+
+\section{Размеры шрифтов}\label{sec:font_size}
+
+\begin{tabular}{cl}
+	\hline
+\tiny{Текст}	& \verb*|\tiny{Текст}| \\
+\scriptsize{Текст}& \verb*|\scriptsize{Текст}| \\
+\footnotesize{Текст}& \verb*|\footnotesize{Текст}| \\
+\small{Текст}& \verb*|\small{Текст}| \\
+\normalsize{Текст}& \verb*|\normalsize{Текст}| \\
+\large{Текст}& \verb*|\large{Текст}| \\
+\Large{Текст}& \verb*|\Large{Текст}| \\
+\LARGE{Текст}& \verb*|\LARGE{Текст}| \\
+\huge{Текст}& \verb*|\huge{Текст}| \\
+\Huge{Текст}& \verb*|\Huge{Текст}| \\
+\hline
+\end{tabular}
+
+
+\section{Ссылки на элементы документа}
+
+
+Для того, что бы ссылаться на объект документа (главу, таблицу, рисунок, формулу и т.д.) сперва нужно повесить на него ярлык, т.е. прописать рядом с ним \verb*|\label{название_ссылки}|. Затем в любом месте текста на неё можно ссылаться с помощью команды: \verb*|\ref{название_ссылки}|
+
+Примеры:
+
+Изменение размеров шрифтов продемонстрировано в разделе~\ref{sec:font_size}. В Главе~\ref{ch:tab} обсуждается создание таблиц. Рисунок~\ref{fig:image1}~--- это первый рисунок в данном документе. А вот ссылка на Таблицу~\ref{tab:GOST1}.
+
+Для того, чтобы в итоговом документе появились ссылки необходимо собрать его дважды.
+
+\section{Правила русской типографии}
+
+Желающим готовить качественные тексты настоятельно рекомендую ознакомиться с основными правилами русской типографии:
+
+\begin{itemize}
+	\item \href{https://habr.com/ru/post/75662/}{https://habr.com/ru/post/75662/}
+	\item \href{https://ivgpu.com/images/docs/sotrudniku/rabota-s-sajtom/pravila-tipografiki.pdf}{\small https://ivgpu.com/images/docs/sotrudniku/rabota-s-sajtom/pravila-tipografiki.pdf}
+	\item \href{https://ru.wikibooks.org/wiki/LaTeX/%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0}{https://ru.wikibooks.org/wiki/LaTeX/Форматирование\_текста}
+\end{itemize}
+

@@ -1,0 +1,95 @@
+\chapter{Tikz}\label{ch:tikz}
+
+
+Пакет Tikz позволяет создавать средствами \LaTeX~разного рода рисунки и диаграммы (простые и очень сложные). В большей степени актуально для \href{https://ru.overleaf.com/learn/latex/Posters}{постеров}/презентаций, но и в текстах может пригодиться.
+
+
+Пример диаграммы, построенной средствами Tikz:
+
+
+\begin{small}
+	\begin{minipage}[t]{1\linewidth}
+	\hspace*{-0.1\linewidth}
+	\begin{tikzpicture}[]
+		\node[xshift=3.5cm] at (0,0) (1) {Естественные науки};
+		\node [below right  = 2cm and 4cm of 1] (2) {Информатика};
+		\node [below left = 0.9cm and 2 cm  of 1] (1a) {$\ldots$};
+		\draw [-{Stealth[length=3mm]}] (1) -- (1a);
+		\node [below left = 0.7cm and -1 cm  of 1] (3) {Физика};
+		\draw [-{Stealth[length=3mm]}] (1) -- (3);
+		\node [right  = 1cm  of 3] (4) {Химия};
+		\node [below left= 0.5 cm and 0.5cm of 4] (4a) {$\ldots$};
+		\draw [-{Stealth[length=3mm]}] (4) -- (4a);
+		\draw [-{Stealth[length=3mm]}] (1) -- (4);
+		\node [right  = 1cm  of 4] (5) {Биология};
+		\node [below = 0.8 cm of 5] (5a) {$\ldots$};
+		\draw [-{Stealth[length=3mm]}] (5) -- (5a);
+		\draw [-{Stealth[length=3mm]}] (1) -- (5);
+		
+		\node [below right  = -1.8cm and 1.cm  of 5] (5a) {Биоинформатика};
+		\node [below   = 1cm of 2] (2a) {$\ldots$};
+		\draw [-{Stealth[length=3mm]}] (2) -- (2a); 
+		\draw [-{Stealth[length=3mm]}] (2) -- (5a); 
+		\draw [-{Stealth[length=3mm]}] (5) -- (5a);
+		\node [below left = 0.5 cm and 1. cm of 3] (6) {$\bullet$ Механика};
+		\draw [-{Stealth[length=3mm]}] (3) -- (6);
+		\node [below = 0.1cm of 6](7) {$\bullet$ Квантовая физика };
+		\node [below = 0.1cm of 7](8) {$\bullet$ Электродинамика};
+		\node [below = 0.1cm of 8](9) {$\bullet$ Оптика};
+		\node [below = 0.1cm of 9](10) {$\bullet$ Термодинамика};
+		\node [below = 0.1cm of 10](11) {$\bullet$ Статистическая физика};
+		\node [below = 0.1cm of 11](12) {$\ldots$};
+		
+		\node [below right= 1.5 cm and 0. cm of 3,rectangle,draw] (p0) {\textbf{Физика плазмы}}; 
+		\draw [-{Stealth[length=3mm]}] (6.east) -- (p0.north west);
+		\draw [-{Stealth[length=3mm]}] (7.east) -- (p0.west); 
+		\draw [-{Stealth[length=3mm]}] (8.east) -- (p0.south west); 
+		\draw [-{Stealth[length=3mm]}] (9.east) -- (p0); 
+		\draw [-{Stealth[length=3mm]}] (4) -- (p0);
+		\draw [-{Stealth[length=3mm]}] (2) -- (p0.east); 
+		\draw [-{Stealth[length=3mm]}] (10.east) -- (p0); 
+		\draw [-{Stealth[length=3mm]}] (11.east) -- ([xshift=0.2cm]p0.south); 
+		
+		\node [below right= 1 cm and -1. cm of p0] (p1) {$\bullet$ Физика космической плазмы}; 
+		\node [below = 0.1cm of p1](p2) {$\bullet$ Физика холодной плазмы};
+		\node [below = 0.1cm of p2](p3) {$\ldots$};
+		\node [below = 0.1cm of p3](p4) {$\bullet$ Управляемый термоядерный синтез (УТС)};
+		\draw [-{Stealth[length=3mm]}] (p0) -- (p1);
+		
+		\node [below left= 1.5 cm and 4.5 cm of p4,rectangle,draw] (p41) {\textbf{Открытые ловушки}};     
+		\node [right= 0.5 cm of p41] (p42) {Пинчи};     
+		\node [right= 0.5 cm of p42] (p43) {Стеллараторы};    
+		\node [right= 0.5 cm of p43] (p44) {Инерциальный УТС};   
+		\node [right= 0.5 cm of p44,rectangle,draw] (p45) {\textbf{Токамаки}};  
+		
+		\draw [-{Stealth[length=3mm]}] (p4) -- (p41.north);   
+		\draw [-{Stealth[length=3mm]}] (p4) -- (p42.north);
+		\draw [-{Stealth[length=3mm]}] (p4) -- (p43.north);   
+		\draw [-{Stealth[length=3mm]}] (p4) -- (p44.north);
+		\draw [-{Stealth[length=3mm]}] (p4) -- (p45.north);
+		\node [below= 0.5 cm of p43] (cap) {Упрощённая структурная схема классификации естественных наук,
+		};  
+		\node [below = 0 of cap] (cap1) {а также список основных научных программ, направленных на решение проблемы УТС.};       
+	\end{tikzpicture}
+	\vspace{10pt}
+\end{minipage}%
+
+
+\begin{figure}
+	\centering
+	\smartdiagram[circular diagram:clockwise]{Edit,
+		pdf\LaTeX, Bib\TeX/ biber, make\-index, pdf\LaTeX}
+	\caption{''Smart'' диаграммы из пакета  \href{https://texample.net/tikz/examples/feature/smartdiagram/}{smartdiagram}}
+\end{figure}
+
+\begin{itemize}
+	\item \href{https://ru.wikipedia.org/wiki/PGF/Tikz}{https://ru.wikipedia.org/wiki/PGF/Tikz}
+	\item \href{https://www.overleaf.com/learn/latex/TikZ_package}{https://www.overleaf.com/learn/latex/TikZ\_package}
+	\item \href{https://texample.net/tikz/examples/}{https://texample.net/tikz/examples/}
+	\item \href{https://ctan.org/pkg/tcolorbox}{https://ctan.org/pkg/tcolorbox} -- пакет для построения цветных фреймов
+\end{itemize}
+
+
+\end{small}
+
+
